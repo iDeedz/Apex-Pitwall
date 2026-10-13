@@ -1,0 +1,35 @@
+{
+  "name": "apex-pitwall",
+  "version": "1.0.0",
+  "description": "Motorsport race-ops UI kit: timing tower, track map, radio and fuel/energy strategy. 52 pages, day/night, no build step.",
+  "license": "MIT",
+  "author": "Mr Deedz",
+  "private": true,
+  "scripts": {
+    "serve": "npx serve . -l 8940",
+    "qa": "node qa/check.js && node qa/spa.js && node qa/labels.js && node qa/sparks.js && node qa/dupes.js && python3 qa/audit.py",
+    "normalize": "python3 tools/normalize_data.py",
+    "derive": "python3 tools/derive.py && python3 tools/sync_baked.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iDeedz/Apex-Pitwall.git"
+  },
+  "homepage": "https://github.com/iDeedz/Apex-Pitwall#readme",
+  "bugs": {
+    "url": "https://github.com/iDeedz/Apex-Pitwall/issues"
+  },
+  "keywords": [
+    "ui-kit",
+    "dashboard",
+    "motorsport",
+    "f1",
+    "pitwall",
+    "html",
+    "css",
+    "telemetry"
+  ],
+  "devDependencies": {
+    "puppeteer-core": "^23.0.0"
+  }
+}

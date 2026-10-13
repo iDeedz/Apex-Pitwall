@@ -1,0 +1,114 @@
+/* Apex Pitwall v2: responsive shell, day-theme chrome, timing tower fit. Loaded last. */
+
+/* ---------- timing tower: all 8 cells always visible ---------- */
+.ax-timing{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:3px;overflow:visible;padding:6px}
+.ax-lap-cell{min-width:0;padding:4px 7px;text-align:left}
+.ax-lap-cell .pos{gap:6px;font-size:10px;color:var(--ax-muted)}
+.ax-lap-cell .pos b{font-size:11.5px;color:var(--ax-lime-t)}
+.ax-lap-cell .name{font-size:11px;white-space:nowrap}
+.ax-lap-cell .gap{font-size:10px;color:var(--ax-cyan-t);white-space:nowrap}
+.ax-session-chip{min-width:0}
+.ax-avatar{background:linear-gradient(135deg,#B5123A,#6D28D9)}
+@media (max-width:1280px){
+  .ax-brand{padding:0 10px}.ax-brand-text{display:none}
+  .ax-session-chip{padding:0 10px}.ax-session-chip .val{font-size:15px}
+  .ax-tower-actions{padding:0 8px;gap:4px}.ax-icon-btn,.ax-avatar{width:32px;height:32px}
+  .ax-lap-cell{padding:4px 5px}
+}
+
+/* ---------- tablet + phone: normal scrolling document ---------- */
+@media (max-width:900px){
+  .ax-app{display:flex;flex-direction:column;height:auto;min-height:100vh;max-height:none;overflow:visible}
+  .ax-tower{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"brand chip act" "time time time";height:auto;position:sticky;top:0}
+  .ax-brand{grid-area:brand;border-right:0}
+  .ax-session-chip{grid-area:chip;border-left:0;padding:6px 8px}
+  .ax-tower-actions{grid-area:act;border-left:0}
+  .ax-tower-actions .ax-icon-btn{display:grid!important}
+  .ax-timing{grid-area:time;border-top:1px solid var(--ax-line-soft);padding:6px}
+  .ax-stage,.ax-stage.track-focus{order:1;overflow:visible;padding:12px}
+  .ax-drivers{order:2;max-height:none;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:6px;border-bottom:1px solid var(--ax-line-soft);scrollbar-width:thin}
+  .ax-drivers-hd{flex:0 0 auto;flex-direction:column;justify-content:center;border-bottom:0;border-right:1px solid var(--ax-line-soft)}
+  .ax-driver-card{flex:0 0 150px;width:150px}
+  .ax-drivers-foot{flex:0 0 220px;margin:0;border-top:0;border-left:1px solid var(--ax-line-soft)}
+  .ax-radio{order:3;max-height:none;overflow:visible;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+  .drawer-backdrop,.drawer,.ax-more-sheet{order:5}
+  .ax-ticker{order:9;position:sticky;bottom:0;grid-template-columns:minmax(0,1fr) auto;padding:6px 10px}
+  .ax-tyre-band{display:none}
+  .ax-stint-nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .ax-stint-nav::-webkit-scrollbar{display:none}
+  .drawer{top:0;bottom:0}
+  .ax-more-sheet{bottom:64px}
+  .ax-track-wrap{display:flex;flex-direction:column;min-height:0;flex:none}
+  .ax-track-hud{position:static;flex-wrap:wrap;padding:8px;inset:auto}
+  .ax-track-wrap canvas#trackCanvas{height:300px;flex:none}
+}
+@media (max-width:600px){
+  .ax-timing{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .ax-radio{grid-template-columns:minmax(0,1fr)}
+  .ax-track-hud{flex-direction:column;gap:6px}
+  .ax-track-legend{gap:4px 10px}
+  .ax-track-tools{flex-wrap:wrap}
+  .ax-track-tools button,.ax-track-tools a.btn{flex:1 1 auto;writing-mode:horizontal-tb;white-space:nowrap}
+  .ax-track-wrap canvas#trackCanvas{height:260px}
+  .ax-session-chip .sub{display:none}
+  .ax-stint-link{padding:7px 8px}
+}
+
+/* ---------- active states readable on every surface ---------- */
+.ax-track-tools button.active{background:#B5123A;border-color:#B5123A;color:#fff}
+.ax-stint-link.active{background:#B5123A;border-color:#B5123A;color:#fff}
+.ax-more-btn{color:var(--ax-neon-t)}
+
+/* ---------- day theme: the chrome follows the theme too ---------- */
+[data-theme="day"] .ax-app{background:radial-gradient(ellipse at 70% 10%,rgba(255,45,85,.10),transparent 42%),linear-gradient(165deg,#EEF1F7,#F5F7FB 50%,#F7EFF2)}
+[data-theme="day"] .ax-app::after{background:none}
+[data-theme="day"] .ax-tower{background:linear-gradient(180deg,#FFFFFF,#F3F5FA);box-shadow:0 6px 20px rgba(16,19,26,.08)}
+[data-theme="day"] .ax-lap-cell{background:#F3F5FA;border-color:rgba(16,19,26,.08)}
+[data-theme="day"] .ax-lap-cell.p1{background:#ECF7DA;border-color:#9BC75A}
+[data-theme="day"] .ax-lap-cell:hover,[data-theme="day"] .ax-lap-cell.active{background:#FDE8EE}
+[data-theme="day"] .ax-drivers,[data-theme="day"] .ax-radio{background:#F7F8FC}
+[data-theme="day"] .ax-ticker{background:#FFFFFF;box-shadow:0 -6px 18px rgba(16,19,26,.06)}
+[data-theme="day"] .ax-gauge-mini .g{background:#F3F5FA}
+[data-theme="day"] .ax-icon-btn{background:#F3F5FA}
+[data-theme="day"] .ax-tyre-scroll .HARD{color:var(--ax-ink)}
+[data-theme="day"] .ax-more-btn:hover{color:#fff;background:#B5123A}
+/* driver cards: stronger ink for deltas and tyre lines */
+.ax-driver-card{background:#EEF0F5}
+.ax-driver-card .who span{color:#2F3747}
+.ax-driver-card .delta.behind{color:#881337}.ax-driver-card .delta.ahead{color:#14532D}.ax-driver-card .delta.pit{color:#7C2D12}
+.badge.CRIT,.badge.Critical,.badge.DNFS,.badge.behind,.badge.Flag{color:var(--ax-neon-t)}
+.ax-stint-link .ic{opacity:1}
+.ax-stint-link.active .ic{color:#fff}
+[data-theme="day"] table.data th{background:#E9ECF3;color:#3B4557}
+[data-theme="day"] table.data td{border-bottom-color:rgba(16,19,26,.07)}
+/* ---------- in-app navigation loader ---------- */
+.ax-loader{min-height:260px;display:grid;place-items:center;padding:24px}
+.ax-loader-term{width:min(460px,100%);padding:16px 18px;border-radius:12px;background:#0B0C10;border:1px solid rgba(255,45,85,.45);box-shadow:0 0 30px rgba(255,45,85,.15);font-family:var(--font-mono);font-size:13px;color:#F4F6FB}
+.ax-loader-term .pr{color:#FF6B85}.ax-loader-term .cur{display:inline-block;width:8px;height:15px;background:#B8FF4A;vertical-align:-2px;margin-left:2px;animation:ax-blink 1s steps(1) infinite}
+.ax-loader-term .bar{height:3px;margin:12px 0 8px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}.ax-loader-term .bar i{display:block;height:100%;width:6%;background:linear-gradient(90deg,#FF2D55,#B8FF4A);transition:width .25s ease}
+.ax-loader-term .sub{font-size:11.5px;color:#A9B1C4}
+@keyframes ax-blink{50%{opacity:0}}
+.ax-view-in{animation:ax-viewin .28s ease both}
+@keyframes ax-viewin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* ---------- energy timeline ---------- */
+.ax-energy-hd{display:flex;justify-content:space-between;align-items:baseline;gap:6px 14px;flex-wrap:wrap;margin-bottom:8px}
+.ax-energy-sub{font-size:12px;color:var(--ax-muted)}
+.ax-energy{width:100%;min-width:0}.ax-energy-svg{display:block;width:100%;height:auto;font-family:var(--font-mono)}
+.ax-energy-legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;font-size:12px;color:var(--ax-ink)}
+.ax-energy-legend i{display:inline-block;width:18px;margin-right:6px;vertical-align:middle}
+.ax-energy-legend .v{margin-left:auto;font-family:var(--font-mono);color:var(--ax-muted)}
+/* contrast hardening (checker-driven) */
+[data-theme="day"]{--ax-dim:#4A5468}
+[data-theme="day"] label,[data-theme="day"] .field label{color:#323B4C}
+[data-theme="day"] table.data th{color:#232A38}
+[data-theme="day"] .badge.SOFT{color:#94300A}
+[data-theme="day"] .s{color:#1F2633}
+[data-theme="day"] .login-hero h1{color:#F4F6FB}
+[data-theme="day"] .login-hero p,[data-theme="day"] .login-hero li,[data-theme="day"] .login-hero .credit,[data-theme="day"] .login-hero strong{color:#C9D0DE!important}
+.ax-grid,.ax-grid>*{min-width:0}
+[data-theme="day"] .input,[data-theme="day"] input,[data-theme="day"] select,[data-theme="day"] textarea{background:#FFFFFF;color:var(--ax-ink);border-color:rgba(16,19,26,.18)}
+[data-theme="day"] .input::placeholder{color:#5A6478}
+[data-theme="day"] .ax-spark{background:#F0F3FA}
+[data-theme="day"] .sector-cell{background:#F3F5FA}
+[data-theme="day"] .badge{background-color:#FFFFFF}
+[data-theme="day"] .flag.red{color:#8F0E2E}

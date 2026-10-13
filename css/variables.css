@@ -1,0 +1,47 @@
+/* Apex Pitwall design tokens: night neon / carbon, plus a day theme. */
+:root{
+  --ax-void:#050507;
+  --ax-carbon:#0B0C10;
+  --ax-panel:#12141C;
+  --ax-panel-2:#181B26;
+  --ax-raised:#1E2230;
+  --ax-line:rgba(255,60,90,.28);
+  --ax-line-soft:rgba(255,255,255,.08);
+  --ax-ink:#F4F6FB;
+  --ax-muted:#8B93A7;
+  --ax-dim:#5C6478;
+  --ax-neon:#FF2D55;
+  --ax-neon-2:#FF6B3D;
+  --ax-lime:#B8FF4A;
+  --ax-cyan:#3DDCFF;
+  --ax-amber:#FFC107;
+  --ax-violet:#A855F7;
+  --ax-soft:rgba(255,45,85,.12);
+  --ax-glass:rgba(18,20,28,.82);
+  --ax-tower-h:64px;
+  --ax-ticker-h:56px;
+  --ax-drivers-w:220px;
+  --ax-radio-w:280px;
+  --font-display:"Segoe UI",Inter,system-ui,sans-serif;
+  --font-mono:"JetBrains Mono","SF Mono",Consolas,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --radius:12px;
+  --shadow:0 12px 40px rgba(0,0,0,.55);
+}
+[data-theme="day"]{
+  --ax-void:#E8ECF4;
+  --ax-carbon:#F5F7FB;
+  --ax-panel:#FFFFFF;
+  --ax-panel-2:#F0F3FA;
+  --ax-raised:#FFFFFF;
+  --ax-ink:#10131A;
+  --ax-muted:#4A5568;
+  --ax-dim:#718096;
+  --ax-line:rgba(255,45,85,.35);
+  --ax-line-soft:rgba(16,19,26,.1);
+  --ax-glass:rgba(255,255,255,.9);
+  --ax-soft:rgba(255,45,85,.08);
+}
+/* Text-safe accent tokens: the bright accents stay for fills/glows; text uses -t so it meets 4.5:1 in both themes */
+:root{--ax-lime-t:#B8FF4A;--ax-cyan-t:#3DDCFF;--ax-neon-t:#FF6B85;--ax-amber-t:#FFC107;--ax-violet-t:#C9A2FF;--ax-orange-t:#FF8A5C;--ax-dim:#9AA3B6;--ax-muted:#98A0B3}
+[data-theme="day"]{--ax-lime-t:#3F6212;--ax-cyan-t:#0E6A85;--ax-neon-t:#B5123A;--ax-amber-t:#8A4B00;--ax-violet-t:#6D28D9;--ax-orange-t:#B23A0B;--ax-dim:#566174;--ax-muted:#475266}

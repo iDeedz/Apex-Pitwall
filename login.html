@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign in · Apex Pitwall · Mr Deedz</title>
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/motion.css" />
+  <link rel="stylesheet" href="css/patterns.css" />
+  <link rel="stylesheet" href="css/print.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+<div class="login-shell"><section class="login-hero"><canvas id="trackCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:.45"></canvas><div class="content"><div class="ax-brand" style="margin-bottom:24px"><div class="ax-brand-mark">AX</div><div class="ax-brand-text"><strong>Apex</strong><span>Pitwall ops</span></div></div><h1>Pitwall for race weekends that never sleep</h1><p>Horizontal timing tower · center live track canvas · left driver stack · right radio/strategy · bottom stint/tyre ticker. Night neon carbon by <strong>Mr Deedz</strong>.</p><ul style="margin:20px 0;padding-left:18px;color:var(--ax-muted);font-weight:600;line-height:1.8"><li>10 drivers · lap 38/58 · Neon Harbor GP</li><li>Tyre desk, strategy board, radio console, stewards, garage cage</li><li>Offline vanilla HTML/CSS/JS — no npm</li></ul><p class="credit">Demo dataset only · not a real team telemetry feed</p></div></section><section class="login-panel"><form class="login-card" id="loginForm"><h2>Pitwall sign-in</h2><p class="sub">Use the demo credentials below.</p><div class="field"><label>Email</label><input class="input" name="email" type="email" value="ops@apex.demo" required /></div><div class="field"><label>Password</label><input class="input" name="password" type="password" value="demo" required /></div><p id="loginErr" style="display:none;color:var(--ax-neon-t);font-size:13px;font-weight:700"></p><button class="btn btn-primary w-full" type="submit">Enter pitwall</button><p class="credit mt-2">ops@apex.demo / demo · <strong>Mr Deedz</strong></p><p class="credit"><img src="assets/mr-deedz-logo.png" alt="Mr Deedz" width="48" height="48" style="margin:8px auto;border-radius:12px"/></p></form></section></div>
+  <script src="js/data.js"></script>
+  <script src="js/data-extra.js"></script>
+  <script src="js/track-canvas.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/spa.js"></script>
+<script src="js/app.js"></script>
+<script>sessionStorage.removeItem("ax_auth");</script>
+</body>
+</html>

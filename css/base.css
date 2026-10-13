@@ -1,0 +1,13 @@
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;min-height:100%;background:var(--ax-void);color:var(--ax-ink);
+  font-family:var(--font-display);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+a{color:var(--ax-cyan-t);text-decoration:none}a:hover{color:var(--ax-lime-t)}
+button,input,select,textarea{font:inherit;color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+h1{font-size:1.55rem}h2{font-size:1.1rem}h3{font-size:.95rem}
+p{margin:0}ul{margin:0;padding:0;list-style:none}
+.mono{font-family:var(--font-mono);font-size:12px;letter-spacing:.02em}
+.credit{font-size:11px;color:var(--ax-dim);font-weight:600}
+.eyebrow{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ax-neon-t)}
+::selection{background:var(--ax-neon);color:#fff}

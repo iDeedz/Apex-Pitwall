@@ -1,0 +1,5 @@
+@media print{
+  .ax-tower,.ax-drivers,.ax-radio,.ax-ticker,.ax-more-sheet,.toast-host,.drawer-backdrop,.drawer{display:none!important}
+  .ax-app{display:block;background:#fff;color:#000}
+  .ax-stage{padding:0}
+}

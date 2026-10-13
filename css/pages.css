@@ -1,0 +1,40 @@
+.ax-spark{height:112px;background:rgba(0,0,0,.25);border-radius:8px;overflow:hidden}
+.ax-spark canvas{width:100%;height:100%;display:block}
+.tyre-strip{display:flex;gap:6px;flex-wrap:wrap}
+.tyre-pill{
+  padding:8px 12px;border-radius:8px;border:1px solid var(--ax-line-soft);
+  background:rgba(0,0,0,.25);font-family:var(--font-mono);font-size:11px;font-weight:800;
+}
+.sector-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sector-cell{
+  padding:12px;border-radius:10px;background:rgba(0,0,0,.3);border:1px solid var(--ax-line-soft);
+  text-align:center;font-family:var(--font-mono);
+}
+.sector-cell .s{font-size:10px;color:var(--ax-muted);font-weight:800;letter-spacing:.12em}
+.sector-cell .t{font-size:1.2rem;font-weight:900;margin:4px 0}
+.sector-cell.purple .t{color:var(--ax-violet-t)}
+.sector-cell.green .t{color:var(--ax-lime-t)}
+.sector-cell.yellow .t{color:var(--ax-amber-t)}
+.compound-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.compound-card{
+  padding:14px;border-radius:12px;border:1px solid var(--ax-line-soft);background:var(--ax-panel-2);
+}
+.compound-card .big{font-size:1.6rem;font-weight:900;font-family:var(--font-mono)}
+.timeline{display:flex;flex-direction:column;gap:0}
+.timeline-item{
+  display:grid;grid-template-columns:80px 16px 1fr;gap:12px;padding:10px 0;
+}
+.timeline-item .t{font-family:var(--font-mono);font-size:11px;color:var(--ax-cyan-t);font-weight:800}
+.timeline-item .dot-col{display:flex;flex-direction:column;align-items:center}
+.timeline-item .dot{width:10px;height:10px;border-radius:50%;background:var(--ax-neon);box-shadow:0 0 10px var(--ax-neon)}
+.timeline-item .line{flex:1;width:2px;background:var(--ax-line-soft);margin:2px 0}
+.flags-row{display:flex;gap:8px;flex-wrap:wrap}
+.flag{
+  padding:10px 14px;border-radius:8px;font-weight:900;font-size:11px;letter-spacing:.08em;
+  border:1px solid var(--ax-line-soft);
+}
+.flag.green{background:rgba(184,255,74,.15);color:var(--ax-lime-t)}
+.flag.yellow{background:rgba(255,193,7,.15);color:var(--ax-amber-t)}
+.flag.red{background:rgba(255,45,85,.2);color:var(--ax-neon-t)}
+.flag.blue{background:rgba(61,220,255,.15);color:var(--ax-cyan-t)}
+.flag.chequered{background:repeating-linear-gradient(90deg,#111 0 8px,#eee 8px 16px);color:#111}
